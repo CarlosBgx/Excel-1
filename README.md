@@ -1,5 +1,7 @@
 En este proyecto se normaliza una base de datos que contiene 15 columnas que no cumplen la 1FN ni la 2FN
+
 Puede consultar la base de datos original y normalizada descargando el archivo tienda_ficticia.xlsx
+
 Puede consultar el diagrama de la tabla normalizada en este vínculo: https://app.mural.co/t/personal60065/m/personal60065/1738171172892/1b9fe56149b7383d84ad9a62bbed1bd538ea7036?sender=u8378c6fa94e2d50ef6d50063
 
 - ID cliente: Identificador único para cada cliente.
