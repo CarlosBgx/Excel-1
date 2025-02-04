@@ -20,7 +20,7 @@ Puede consultar el diagrama de la tabla normalizada en este vínculo: https://ap
 - Empleado asociado: Nombre del empleado que gestionó la compra.
 - Comentarios: Observaciones adicionales de la compra.
 
-- Proceso de normalización 1FN:
+Proceso de normalización 1FN:
 1. La columna teléfono y correo se separa según el delimitador /
 Los números están en formatos muy varios, algunos tienen una x, otros un espacio, signo -, etc. Se utiliza la fórmula:
 =SUSTITUIR(SUSTITUIR(SUSTITUIR(SUSTITUIR(SUSTITUIR([@Teléfono]; "("; ""); ")"; ""); "-"; ""); "x"; ""); "."; "")
@@ -58,7 +58,7 @@ Esta fórmula empieza a contar 5 caracteres desde el final de la dirección y lo
 
 9. Se reemplazan los espacios vacíos de la columna de comentarios por N/A
 
-- Proceso de normalización 2FN:
+Proceso de normalización 2FN:
   
 (PF) Clave primaria
 
@@ -78,60 +78,59 @@ Esta fórmula empieza a contar 5 caracteres desde el final de la dirección y lo
    -	ID_Detalle_Factura (FK)
 
 2. Tabla Clientes: contiene la información personal y de contacto de los clientes.
--	ID_Cliente (PK)
--	Nombre_Cliente
--	Teléfono
--	Correo
--	Dirección
--	ID_Ciudad (FK)
+   -	ID_Cliente (PK)
+   -	Nombre_Cliente
+   -	Teléfono
+   -	Correo
+   -	Dirección
+   -	ID_Ciudad (FK)
 
 3. Tabla Ciudad: contiene información sobre las ciudades relacionadas con clientes y empleados.
-•	ID_Ciudad (PK)
-•	Ciudad
-•	ID_Estado (FK)
+   - ID_Ciudad (PK)
+   - Ciudad
+   - ID_Estado (FK)
 
 4. Tabla Estado: información sobre los estados y su código postal.
-•	ID_Estado (PK)
-•	Estado
-•	Código_postal
+   - ID_Estado (PK)
+   - Estado
+   - Código_postal
 
 5. Tabla Empleado: registra los empleados asociados a las ventas de la tienda.
-•	ID_Empleado (PK)
-•	Empleado_Asociado
+   - ID_Empleado (PK)
+   - Empleado_Asociado
 
 6. Tabla Productos: contiene la información de los productos vendidos.
-•	ID_Producto (PK)
-•	Producto
-•	ID_Categoría (FK)
+   - ID_Producto (PK)
+   - Producto
+   - ID_Categoría (FK)
 
-7. Tabla Categorías: en esta se definen las categorías a las que pertenecen los productos.
-•	ID_Categoría (PK)
-•	Categoría_del_Producto
+8. Tabla Categorías: en esta se definen las categorías a las que pertenecen los productos.
+   - ID_Categoría (PK)
+   - Categoría_del_Producto
 
-8. Tabla Métodos de Pago: contiene los diferentes métodos de pago utilizados en las compras.
-•	ID_MetodoPago (PK)
-•	Método_de_Pago
+10. Tabla Métodos de Pago: contiene los diferentes métodos de pago utilizados en las compras.
+    - ID_MetodoPago (PK)
+    - Método_de_Pago
 
-9. Tabla Promociones: incluye información sobre las promociones aplicadas en las ventas.
-•	ID_Promocion (PK)
-•	Promoción_aplicada
+12. Tabla Promociones: incluye información sobre las promociones aplicadas en las ventas.
+    - ID_Promocion (PK)
+    - Promoción_aplicada
 
-10. Tabla Factura: registra la información general de cada venta realizada.
-•	ID_Factura (PK)
-•	ID_Cliente (FK)
-•	ID_Método_de_Pago (FK)
-•	ID_Promoción (FK)
-•	Fecha_de_Compra
-•	Fecha_de_Entrega
+14. Tabla Factura: registra la información general de cada venta realizada.
+    - ID_Factura (PK)
+    - ID_Cliente (FK)
+    - ID_Método_de_Pago (FK)
+    - ID_Promoción (FK)
+    - Fecha_de_Compra
+    - Fecha_de_Entrega
 
-11. Tabla Detalle_Factura: contiene los detalles específicos de cada transacción de compra.
-•	ID_Detalle_Factura (PK)
-•	ID_Factura (FK)
-•	ID_Producto (FK)
-•	Cantidad
-•	Precio
-•	Total_Compra
-•	Comentarios
-
+15. Tabla Detalle_Factura: contiene los detalles específicos de cada transacción de compra.
+    - ID_Detalle_Factura (PK)
+    - ID_Factura (FK)
+    - ID_Producto (FK)
+    - Cantidad
+    - Precio
+    - Total_Compra
+    - Comentarios
 
 Puede consultar el diagrama de las tabla normalizada en este vínculo: https://app.mural.co/t/personal60065/m/personal60065/1738171172892/1b9fe56149b7383d84ad9a62bbed1bd538ea7036?sender=u8378c6fa94e2d50ef6d50063
