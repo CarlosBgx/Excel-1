@@ -65,17 +65,17 @@ Esta fórmula empieza a contar 5 caracteres desde el final de la dirección y lo
 (FK) Clave foránea
 
 1. Tabla principal: en esta se encuentran todas las relaciones clave de la base de datos
--	Folio (PK)
--	ID_Cliente (FK)
--	ID_Ciudad (FK)
--	ID_Estado (FK)
--	ID_Producto (FK)
--	ID_Categoria (FK)
--	ID_Metodos_de_Pago (FK)
--	ID_Promocion (FK)
--	ID_Empleado (FK)
--	ID_Factura (FK)
--	ID_Detalle_Factura (FK)
+   -	Folio (PK)
+   -	ID_Cliente (FK)
+   -	ID_Ciudad (FK)
+   -	ID_Estado (FK)
+   -	ID_Producto (FK)
+   -	ID_Categoria (FK)
+   -	ID_Metodos_de_Pago (FK)
+   -	ID_Promocion (FK)
+   -	ID_Empleado (FK)
+   -	ID_Factura (FK)
+   -	ID_Detalle_Factura (FK)
 
 2. Tabla Clientes: contiene la información personal y de contacto de los clientes.
 -	ID_Cliente (PK)
