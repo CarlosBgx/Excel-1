@@ -60,100 +60,78 @@ Esta fórmula empieza a contar 5 caracteres desde el final de la dirección y lo
 
 - Proceso de normalización 2FN:
   
-(*) Clave primaria
+(PF) Clave primaria
 
-(X) Clave foránea
+(FK) Clave foránea
 
-1. Se crea una nueva tabla de clientes que contiene las columnas
+1. Tabla principal: en esta se encuentran todas las relaciones clave de la base de datos
+•	Folio (PK)
+•	ID_Cliente (FK)
+•	ID_Ciudad (FK)
+•	ID_Estado (FK)
+•	ID_Producto (FK)
+•	ID_Categoria (FK)
+•	ID_Metodos_de_Pago (FK)
+•	ID_Promocion (FK)
+•	ID_Empleado (FK)
+•	ID_Factura (FK)
+•	ID_Detalle_Factura (FK)
 
-ID Cliente (*)
+2. Tabla Clientes: contiene la información personal y de contacto de los clientes.
+•	ID_Cliente (PK)
+•	Nombre_Cliente
+•	Teléfono
+•	Correo
+•	Dirección
+•	ID_Ciudad (FK)
 
-Nombre Cliente
+3. Tabla Ciudad: contiene información sobre las ciudades relacionadas con clientes y empleados.
+•	ID_Ciudad (PK)
+•	Ciudad
+•	ID_Estado (FK)
 
-Teléfono 
+4. Tabla Estado: información sobre los estados y su código postal.
+•	ID_Estado (PK)
+•	Estado
+•	Código_postal
 
-Correo
+5. Tabla Empleado: registra los empleados asociados a las ventas de la tienda.
+•	ID_Empleado (PK)
+•	Empleado_Asociado
 
-Dirección
+6. Tabla Productos: contiene la información de los productos vendidos.
+•	ID_Producto (PK)
+•	Producto
+•	ID_Categoría (FK)
 
-ID_Ciudad (X)
+7. Tabla Categorías: en esta se definen las categorías a las que pertenecen los productos.
+•	ID_Categoría (PK)
+•	Categoría_del_Producto
 
-2. Se crea una nueva tabla llamada Ciudad que contiene las columnas
+8. Tabla Métodos de Pago: contiene los diferentes métodos de pago utilizados en las compras.
+•	ID_MetodoPago (PK)
+•	Método_de_Pago
 
-ID_Ciudad (*) 
+9. Tabla Promociones: incluye información sobre las promociones aplicadas en las ventas.
+•	ID_Promocion (PK)
+•	Promoción_aplicada
 
-Ciudad
+10. Tabla Factura: registra la información general de cada venta realizada.
+•	ID_Factura (PK)
+•	ID_Cliente (FK)
+•	ID_Método_de_Pago (FK)
+•	ID_Promoción (FK)
+•	Fecha_de_Compra
+•	Fecha_de_Entrega
 
-ID_Estado (X)
+11. Tabla Detalle_Factura: contiene los detalles específicos de cada transacción de compra.
+•	ID_Detalle_Factura (PK)
+•	ID_Factura (FK)
+•	ID_Producto (FK)
+•	Cantidad
+•	Precio
+•	Total_Compra
+•	Comentarios
 
-3. Se crea una nueva tabla llamada Estado que contiene las columnas
-
-ID_Estado(*)
-
-Estado
-
-Código_postal
-
-4. Se crea una nueva tabla llamada Empleado que contiene las columnas
-
-ID_Empleado(*)
-
-Empleado_Asociado
-
-5. Se crea una nueva tabla llamada Productos que contiene las columnas
-
-ID_Producto (*)
-
-Producto
-
-ID_Categoría (X)
-
-6. Se crea una nueva tabla llamada Categorías que contiene las columnas
-
-ID_Categoría (*)
-
-Categoría_del_Producto
-
-7. Se crea una nueva tabla llamada Métodos de pago que contiene las columnas
-
-ID_MetodoPago (*)
-
-Método_de_Pago
-
-8. Se crea una nueva tabla llamada Promociones que contiene las columnas
-
-ID_Promocion (*)
-
-Promoción aplicada
-
-9. Se crea una nueva tabla llamada Factura que contiene las columnas
-
-ID_Factura(*)
-
-ID_Cliente(X)
-
-ID_Método_de_Pago
-
-ID_Promoción
-
-Fecha de Compra
-
-Fecha_de_Entrega
-
-10. Se crea una nueva tabla llamada Detalle_Factura que contiene las columnas
-
-ID_Detalle_Factura
-
-ID_Factura
-
-ID_Producto
-
-Cantidad
-
-Precio
-
-Total_Compra
-
-Comentarios
 
 Puede consultar el diagrama de las tabla normalizada en este vínculo: https://app.mural.co/t/personal60065/m/personal60065/1738171172892/1b9fe56149b7383d84ad9a62bbed1bd538ea7036?sender=u8378c6fa94e2d50ef6d50063
