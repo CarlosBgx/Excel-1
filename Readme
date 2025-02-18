@@ -106,6 +106,7 @@ Proceso de normalización 2FN:
 -	ID_Cliente (FK)
 -	ID_Método_de_Pago (FK)
 -	ID_Promoción (FK)
+-	ID_Detalle_Factura (FK)
 -	Fecha_de_Compra
 -	Fecha_de_Entrega
 
